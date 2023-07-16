@@ -14,13 +14,10 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Guest.init({
+    ticket: DataTypes.INTEGER,
     seat: DataTypes.INTEGER,
     name: DataTypes.STRING,
-    item: DataTypes.ARRAY,
-    ticket: {
-      type: DataTypes.INTEGER,
-      autoIncrement: true,
-    }
+    item: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Guest',
