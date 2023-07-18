@@ -1,12 +1,9 @@
-// TO ADD
-//Hash passwords section
-//Add 'bcyrpt'
 'use strict';
 const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class Guest extends Model {
+  class Server extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -16,15 +13,14 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
-  Guest.init({
-    ticket: DataTypes.INTEGER,
-    seat: DataTypes.INTEGER,
+  Server.init({
     name: DataTypes.STRING,
-    item: DataTypes.INTEGER,
-    server: DataTypes.STRING
+    employeeID: DataTypes.INTEGER,
+    password: DataTypes.STRING,
+    ticket: DataTypes.INTEGER
   }, {
     sequelize,
-    modelName: 'Guest',
+    modelName: 'Server',
   });
-  return Guest;
+  return Server;
 };
