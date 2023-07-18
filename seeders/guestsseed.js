@@ -13,10 +13,12 @@ module.exports = {
      * }], {});
     */
     return queryInterface.bulkInsert('guests', [{
-      ticket: '3',
-      seat: '7',
-      name: 'Ron',
-      item: "{4}"
+      ticket: '28',
+      seat: '91',
+      name: 'Pam',
+      item: "{3}",
+      server: "Tammy"
+  
     }]);
    
   },
