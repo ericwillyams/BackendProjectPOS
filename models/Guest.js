@@ -1,3 +1,6 @@
+// TO ADD
+//Hash passwords section
+//Add 'bcyrpt'
 'use strict';
 const {
   Model
@@ -19,7 +22,6 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING,
     item: DataTypes.INTEGER,
     server: DataTypes.STRING
-
   }, {
     sequelize,
     modelName: 'Guest',
