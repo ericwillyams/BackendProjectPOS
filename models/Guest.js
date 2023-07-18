@@ -1,3 +1,6 @@
+// TO ADD
+//Hash passwords section
+//Add 'bcyrpt'
 'use strict';
 const {
   Model
@@ -16,10 +19,10 @@ module.exports = (sequelize, DataTypes) => {
   Guest.init({
     seat: DataTypes.INTEGER,
     name: DataTypes.STRING,
-    item: DataTypes.ARRAY,
+    // item: DataTypes.ARRAY,
     ticket: {
       type: DataTypes.INTEGER,
-      autoIncrement: true,
+      // autoIncrement: true,
     }
   }, {
     sequelize,
