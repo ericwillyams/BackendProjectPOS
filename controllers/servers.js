@@ -1,13 +1,11 @@
 const { Server } = require("../models");
-console.log("Server", Server);
-//Guest from User***
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
+//Guest from User***
 const getAllUsers = async (req, res, next) => {
 	const servers = await Server.findAll();
 	res.send("respond with a resource");
-
 };
 
 //GET CREATE USER
@@ -73,22 +71,24 @@ const getSeatmap = async (req, res) => {
 };
 
 //GET SEAT by ID
-const getSeatByID = (req, res) => {
-	const { seat, name, item, ticket, id } = req.user;
+const getGuestByID = (req, res) => {
+	const { seat, name, item, ticket, id } = req.guest;
 	console.log(seat, name, item, ticket, id);
 
-	res.render("seat", {
-		title: "User Profile",
+	res.render("guest", {
+		title: "GUEST PROFILE",
+		id,
 		seat,
 		name,
 		item,
 		ticket,
 	});
-	if ((req.user = true)) {
+	if ((req.gust = true)) {
 		console.log("code is working");
 	} else {
 		console.log(err);
 	}
+	// res.reditect("/users/create")
 };
 
 module.exports = {
@@ -97,6 +97,6 @@ module.exports = {
 	getLogin,
 	postLogin,
 	getSeatmap,
-	getSeatByID,
+	getGuestByID,
 	getAllUsers,
 };

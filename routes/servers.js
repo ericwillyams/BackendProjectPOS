@@ -2,14 +2,13 @@ var express = require("express");
 var router = express.Router();
 const { Server } = require("../models");
 const userController = require("../controllers/servers");
-const findUser = require("../middleware/findGuest");
+const findGuest = require("../middleware/findGuest");
 const bcrypt = require('bcrypt');
 // const authCheck = require('../middleware/authCheck');
 const saltRounds = 10;
 
 /* GET users listing. */
 router.get('/', userController.getAllUsers);
-
 
 //GET CREATE USER
 router.get("/create", userController.createUser);
@@ -23,17 +22,10 @@ router.get("/login", userController.getLogin);
 //POST LOGIN
 router.post('/login', userController.postLogin);
 
-
-
-
-
-
-
-
 //GET SEATMAP
 router.get("/seatmap", userController.getSeatmap);
 
 // GET SEAT by ID
-router.get("/seat/:id", findUser, userController.getSeatByID);
+router.get("/guest/:id", findGuest, userController.getGuestByID);
 
 module.exports = router;
