@@ -11,13 +11,18 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      const server = sequelize.define('server');
+      const name = sequelize.define('name');
+
+      server.hasOne(name);
+      server.hasMany(ticket);
     }
   }
   Server.init({
     name: DataTypes.STRING,
     employeeID: DataTypes.INTEGER,
     password: DataTypes.STRING,
-    ticket: DataTypes.INTEGER
+    ticket: DataTypes.ARRAY(DataTypes.INTEGER)
   }, {
     sequelize,
     modelName: 'Server',

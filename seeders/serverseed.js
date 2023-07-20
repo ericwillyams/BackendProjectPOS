@@ -13,10 +13,10 @@ module.exports = {
      * }], {});
     */
     return queryInterface.bulkInsert('server', [{
-      name: 'Rachael',
-      employeeid: '098765',
-      password: 'RachaelRocks',
-      ticket:'{1,5,9}'
+      name: 'Charty Mcdennis',
+      employeeid: '0045',
+      password: 'MyPass1!',
+      ticket: [1,4]
     }]);
   },
 

@@ -13,10 +13,10 @@ module.exports = {
      * }], {});
     */
     return queryInterface.bulkInsert('menu', [{
-      item: '44',
-      price: '10',
-      description: 'Large Queso',
-      type: "App"
+      item: '80',
+      price: '12',
+      description: 'Pork Chop Sammie',
+      type: "Entree"
     }]);
   },
 

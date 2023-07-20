@@ -11,6 +11,10 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      const menu = sequelize.define('menu');
+      const item = sequelize.define('item');
+
+      menu.hasMany(item)
     }
   }
   Menu.init({
