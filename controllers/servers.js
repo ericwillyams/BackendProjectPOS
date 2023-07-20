@@ -49,7 +49,7 @@ const postLogin = async (req, res) => {
 		res.render("login", { title: "Login", error: "User not found" });
 	} else {
 		const hashedPW = server.password;
-		await bcrypt.compare(password, hashedPW, function (err, result) {
+	    bcrypt.compare(password, hashedPW).then(function (err, result) {
 			console.log(result);
 
 			if (result) {
