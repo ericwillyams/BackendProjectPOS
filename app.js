@@ -7,7 +7,7 @@ const sequelize = require('./config/database')
 
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var usersRouter = require('./routes/servers');
 
 //DB Setup
 sequelize
