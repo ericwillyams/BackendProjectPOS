@@ -1,6 +1,7 @@
 const { Server } = require("../models");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const { token } = require("morgan");
 
 //Guest from User***
 const getAllUsers = async (req, res, next) => {
@@ -47,10 +48,12 @@ const postLogin = async (req, res) => {
 		res.render("login", { title: "Login", error: "User not found" });
 	} else {
 		const hashedPW = server.password;
+
 	    bcrypt.compare(password, hashedPW).then(function (err, result) {
+
 			console.log(result);
 
-			if (result) {
+			if (result= true) {
 				//this saves it as a cookie so i can create a session??
 				const token = jwt.sign({ foo: "bar" }, "superSecretPrivateKey", {
 					expiresIn: "1h",
@@ -58,12 +61,17 @@ const postLogin = async (req, res) => {
 				console.log(token);
 
 				res.cookie("token", token);
+				
+				
 				// res.redirect("/");
 			} else res.render("login", { title: "Login", error: "Passwords do not match" });
 		});
 	}
+
 	res.redirect("/users/seatmap");
+
 };
+
 
 //GET SEATMAP
 const getSeatmap = async (req, res) => {
