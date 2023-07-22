@@ -1,4 +1,6 @@
 const { Server } = require("../models");
+const { Guest } = require("../models");
+
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
@@ -71,24 +73,48 @@ const getSeatmap = async (req, res) => {
 };
 
 //GET SEAT by ID
-const getGuestByID = (req, res) => {
-	const { seat, name, item, ticket, id } = req.guest;
-	console.log(seat, name, item, ticket, id);
+const getServerByID = (req, res) => {
+	const { id, name, employeeid, password, ticket } = req.server;
+	console.log(id, name, employeeid, password, ticket);
 
-	res.render("guest", {
-		title: "GUEST PROFILE",
+	res.render("server", {
+		title: "Server PROFILE",
 		id,
-		seat,
 		name,
-		item,
+		employeeid,
+		password,
 		ticket,
 	});
-	if ((req.gust = true)) {
+	if ((req.server = true)) {
 		console.log("code is working");
 	} else {
 		console.log(err);
 	}
-	// res.reditect("/users/create")
+	// console.log(Guest)
+	// res.redirect(`/users/guest/${id}`)
+};
+
+//GET GUEST BY ID
+const getGuestByID = (req, res) => {
+	const { id, ticket, seat, name, item } = req.guest;
+	console.log(id, ticket, seat, name, item);
+
+	res.render("guest", {
+		title: "GUEST PROFILE",
+		id,
+		ticket,
+		seat,
+		name,
+		item,
+		// server,
+	});
+	if ((req.guest = true)) {
+		console.log("code is working");
+	} else {
+		console.log(err);
+	}
+	// console.log(Guest)
+	// res.redirect(`/users/guest/${id}`)
 };
 
 module.exports = {
@@ -97,6 +123,7 @@ module.exports = {
 	getLogin,
 	postLogin,
 	getSeatmap,
-	getGuestByID,
+	getServerByID,
 	getAllUsers,
+	getGuestByID,
 };

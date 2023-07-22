@@ -1,6 +1,3 @@
-// TO ADD
-//Hash passwords section
-//Add 'bcyrpt'
 'use strict';
 const {
   Model
@@ -14,7 +11,6 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      
     }
   }
   Guest.init({
