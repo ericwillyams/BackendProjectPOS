@@ -68,9 +68,9 @@ const postLogin = async (req, res) => {
 				// res.redirect("/");
 			} else res.render("login", { title: "Login", error: "Passwords do not match" });
 		});
-	}
-
-	res.redirect("/users/seatmap");
+	} 
+	
+	// res.redirect("/users/seatmap");
 
 };
 
@@ -104,8 +104,8 @@ const getServerByID = (req, res) => {
 
 //GET GUEST BY ID
 const getGuestByID = (req, res) => {
-	const { id, ticket, seat, name, item } = req.guest;
-	console.log(id, ticket, seat, name, item);
+	const { id, ticket, seat, name, item, server } = req.guest;
+	console.log(id, ticket, seat, name, item, server);
 
 	res.render("guest", {
 		title: "GUEST PROFILE",
@@ -114,16 +114,22 @@ const getGuestByID = (req, res) => {
 		seat,
 		name,
 		item,
-		// server,
+		server,
 	});
 	if ((req.guest = true)) {
 		console.log("code is working");
 	} else {
 		console.log(err);
 	}
-	// console.log(Guest)
-	// res.redirect(`/users/guest/${id}`)
 };
+const postGuestByID = (req, res)=>{
+	// const {id, ticket, seat, name, item, server} = req.guest;
+	
+	Server.onselect = function(){
+		console.log('test')
+	};
+
+}
 
 module.exports = {
 	createUser,
@@ -134,4 +140,5 @@ module.exports = {
 	getServerByID,
 	getAllUsers,
 	getGuestByID,
+	postGuestByID,
 };

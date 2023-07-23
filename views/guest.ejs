@@ -1,19 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <title><%= title %></title>
-</head>
-<body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-    <p>ID: <%= id %></p>
-    <p>TICKET: <%= ticket %></p>
-    <p>SEAT: <%= seat %></p>
-    <p>ITEMS: <%= item %></p>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+			crossorigin="anonymous"
+		/>
 
-</body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    </head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-9">
+					<h1>Welcome to <%= title %></h1>
+				</div>
+				<div class="col-4">
+					<h4>THIS IS WHERE THE MENU WILL BE PLACED</h4>
+					<!-- <div class="row row-cols-2">
+						<div class="dropdown">
+							<button
+								class="btn btn-secondary dropdown-toggle"
+								type="button"
+								data-bs-toggle="dropdown"
+								aria-expanded="false"
+							>
+								BEVERAGES
+							</button>
+							<ul class="dropdown-menu">
+								<li><a class="dropdown-item" href="#">Coke</a></li>
+								<li><a class="dropdown-item" href="#">Pepsi</a></li>
+								<li><a class="dropdown-item" href="#">RootBeer</a></li>
+							</ul>
+						</div> 
+						<div class="dropdown">
+							<button
+								class="btn btn-secondary dropdown-toggle"
+								type="button"
+								data-bs-toggle="dropdown"
+								aria-expanded="false"
+							>
+								BEER
+							</button>
+							<ul class="dropdown-menu">
+								<li><a class="dropdown-item" href="#">DOS XX</a></li>
+								<li><a class="dropdown-item" href="#">Austin EastCiders</a></li>
+								<li><a class="dropdown-item" href="#">Miller</a></li>
+							</ul>
+						</div>
+						<div class="dropdown">
+							<button
+								class="btn btn-secondary dropdown-toggle"
+								type="button"
+								data-bs-toggle="dropdown"
+								aria-expanded="false"
+							>
+								WINE
+							</button>
+							<ul class="dropdown-menu">
+								<li><a class="dropdown-item" href="#">Pino Noir</a></li>
+								<li><a class="dropdown-item" href="#">Pino Grigio</a></li>
+								<li><a class="dropdown-item" href="#">Kendall Jackson</a></li>
+							</ul>
+						</div>
+						<div class="dropdown">
+							<button
+								class="btn btn-secondary dropdown-toggle"
+								type="button"
+								data-bs-toggle="dropdown"
+								aria-expanded="false"
+							>
+								COCKTAIL
+							</button>
+							<ul class="dropdown-menu">
+								<li><a class="dropdown-item" href="#">Old Fash</a></li>
+								<li><a class="dropdown-item" href="#">Martini #007</a></li>
+								<li><a class="dropdown-item" href="#">Margarita Madness</a></li>
+							</ul>
+						</div>
+					</div>
+			
+					<div class="row row-cols-2">
+						<div class="dropdown">
+							<button
+								class="btn btn-secondary dropdown-toggle"
+								type="button"
+								data-bs-toggle="dropdown"
+								aria-expanded="false"
+							>
+								ENTREE
+							</button>
+							<ul class="dropdown-menu">
+								<li><a class="dropdown-item" href="#">Burger</a></li>
+								<li><a class="dropdown-item" href="#">Salad</a></li>
+								<li><a class="dropdown-item" href="#">Sandwich</a></li>
+							</ul>
+						</div>
+						<div class="dropdown">
+							<button
+								class="btn btn-secondary dropdown-toggle"
+								type="button"
+								data-bs-toggle="dropdown"
+								aria-expanded="false"
+							>
+								APP
+							</button>
+							<ul class="dropdown-menu">
+								<li><a class="dropdown-item" href="#">Pizza</a></li>
+								<li><a class="dropdown-item" href="#">Wings</a></li>
+								<li><a class="dropdown-item" href="#">Nachos</a></li>
+							</ul>
+						</div>
+						<div class="dropdown">
+							<button
+								class="btn btn-secondary dropdown-toggle"
+								type="button"
+								data-bs-toggle="dropdown"
+								aria-expanded="false"
+							>
+								DESSERT
+							</button>
+							<ul class="dropdown-menu">
+								<li><a class="dropdown-item" href="#">Brownie</a></li>
+								<li><a class="dropdown-item" href="#">IceCream</a></li>
+								<li><a class="dropdown-item" href="#">Cookies</a></li>
+							</ul>
+						</div> -->
+						<div class="dropdown">
+							<button
+								class="btn btn-secondary dropdown-toggle"
+								type="button"
+								data-bs-toggle="dropdown"
+								aria-expanded="false"
+							>
+								PROMO
+							</button>
+							<ul class="dropdown-menu">
+								<li><a class="dropdown-item" href="#">Ketchup</a></li>
+								<li><a class="dropdown-item" href="#">Mustard</a></li>
+								<li><a class="dropdown-item" href="#">Mayo</a></li>
+							</ul>
+						</div>
+					</div>
+				</div> 
+
+				<div class="col-6 col-sm-8">
+					<h4>THIS IS WHERE THE INFORMATION WILL BE PLACED</h4>
+					<br />  
+					<p>SERVER: <%= server %></p>
+					<p>SEAT: <%= seat %></p>
+					<p>NAME: <%= name%> </p>
+
+				</div>
+                <div class="row row-cols-4">
+                    <div class="col"><button><a href="/users/wine/">WINE</a></button></div>
+                    <div class="col"><button><a href="/users/beer/">BEER</a></button></div>
+                    <div class="col"><button><a href="/users/entree/">ENTREE</a></button></div>
+                    <div class="col"><button><a href="/users/app/">APP</a></button></div>
+                  </div>
+                <!-- <button>checkout</button> -->
+			</div>
+		</div>
+	</body>
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+		crossorigin="anonymous"
+	></script>
 </html>
+

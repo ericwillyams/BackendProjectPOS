@@ -31,8 +31,10 @@ router.get("/seatmap", userController.getSeatmap);
 // GET SERVER by ID
 router.get("/server/:id", findServer, userController.getServerByID);
 
-
 //GET GUEST BY ID
 router.get("/guest/:id", findGuest, userController.getGuestByID);
+
+//post guest by ID
+router.post('/guest/:id', findGuest, userController.postGuestByID);
 
 module.exports = router;
