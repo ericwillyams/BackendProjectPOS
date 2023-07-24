@@ -10,15 +10,10 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       name: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      employeeid: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       password: {
-        type: Sequelize.STRING,
-        allowNull: false,
+        type: Sequelize.STRING
       },
       ticket: {
         type: Sequelize.INTEGER

@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
@@ -12,11 +12,13 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
-    return queryInterface.bulkInsert('server', [{
-      name: 'Rachael',
-      employeeid: '098765',
-      password: 'RachaelRocks',
-      ticket:'{1,5,9}'
+    return queryInterface.bulkInsert('Menu', [{
+      item: 1,
+      price: 13,
+      description: 'Pizza',
+      type: "App",
+      // createdAt: new Date(),
+      // updatedAt: new Date()
     }]);
   },
 
@@ -27,6 +29,7 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-    return queryInterface.bulkDelete('server', null, {});
+    return queryInterface.bulkDelete('Menu', null, {});
   }
+
 };
