@@ -41,39 +41,40 @@ const getLogin = async (req, res) => {
 //POST LOGIN
 const postLogin = async (req, res) => {
 	const { name, password } = req.body;
-
-	const server = await Server.findOne({
+	
+	const data =  await Server.findOne({
 		where: { name },
 	});
 
-	if (server == null) {
+	// console.log(name,password,data)
+	console.log("pw", password, data.password)
+
+	if ( data == null) {
 		res.render("login", { title: "Login", error: "User not found" });
 	} else {
-		const hashedPW = server.password;
-
-	    bcrypt.compare(password, hashedPW).then(function (err, result) {
-
-			console.log(result);
-
-			if (result= true) {
-				//this saves it as a cookie so i can create a session??
-				const token = jwt.sign({ foo: "bar" }, "superSecretPrivateKey", {
-					expiresIn: "1h",
-				});
-				console.log(token);
-
-				res.cookie("token", token);
+		const hashedPW = data.password;
+		const isPasswordValid = await bcrypt.compare(password, data.password);
+		if (isPasswordValid == true) {
+			const token = jwt.sign({ foo: "bar" }, "superSecretPrivateKey", {
+				expiresIn: "1h",
+			});
+			console.log(token);
+	
+			// res.cookie("token", token);
+			
+			res.redirect("/users/seatmap");
+	
+	
 				
-				
-				// res.redirect("/");
-			} else res.render("login", { title: "Login", error: "Passwords do not match" });
-		});
-	}
-
-	res.redirect("/users/seatmap");
-
-};
-
+			
+		} else  {
+		res.render("login", { title: "Login", error: "Passwords do not match" });
+			
+	};
+	};
+	
+	
+}
 
 //GET SEATMAP
 const getSeatmap = async (req, res) => {

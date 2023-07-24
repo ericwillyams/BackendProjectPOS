@@ -7,7 +7,7 @@ const findGuest = require("../middleware/findGuest");
 const findServer = require("../middleware/findServer");
 
 const bcrypt = require('bcrypt');
-// const authCheck = require('../middleware/authCheck');
+const authCheck = require('../middleware/authCheck');
 const saltRounds = 10;
 
 /* GET users listing. */

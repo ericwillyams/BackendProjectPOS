@@ -12,11 +12,12 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
-    return queryInterface.bulkInsert('menu', [{
-      item: '44',
-      price: '10',
-      description: 'Large Queso',
-      type: "App"
+    return queryInterface.bulkInsert('Servers', [{
+      name: 'Jimmy',
+      password: 'password',
+      ticket: [1,4,6],
+      createdAt: new Date(),
+      updatedAt: new Date()
     }]);
   },
 
@@ -27,6 +28,6 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-    return queryInterface.bulkDelete('menu', null, {});
+    return queryInterface.bulkDelete('Servers', null, {});
   }
 };

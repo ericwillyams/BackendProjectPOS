@@ -11,12 +11,13 @@ module.exports = {
      *   name: 'John Doe',
      *   isBetaMember: false
      * }], {});
+     * 
     */
-    return queryInterface.bulkInsert('server', [{
-      name: 'Rachael',
-      employeeid: '098765',
-      password: 'RachaelRocks',
-      ticket:'{1,5,9}'
+    return queryInterface.bulkInsert('Guests', [{
+      ticket: 1,
+      seat: 1,
+      items: [1,2,3],
+      server: "Eric",
     }]);
   },
 
@@ -27,6 +28,6 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-    return queryInterface.bulkDelete('server', null, {});
+    return queryInterface.bulkDelete('Guests', null, {});
   }
 };

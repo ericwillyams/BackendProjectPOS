@@ -12,15 +12,14 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
-    return queryInterface.bulkInsert('guests', [{
-      ticket: '28',
-      seat: '91',
-      name: 'Pam',
-      item: "{3}",
-      server: "Tammy"
-  
+    return queryInterface.bulkInsert('Menu', [{
+      item: 1,
+      price: 13,
+      description: 'Pizza',
+      type: "App",
+      // createdAt: new Date(),
+      // updatedAt: new Date()
     }]);
-   
   },
 
   async down (queryInterface, Sequelize) {
@@ -30,6 +29,6 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-    return queryInterface.bulkDelete('guests', null, {});
+    return queryInterface.bulkDelete('Menu', null, {});
   }
 };

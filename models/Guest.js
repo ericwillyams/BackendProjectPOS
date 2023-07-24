@@ -16,9 +16,8 @@ module.exports = (sequelize, DataTypes) => {
   Guest.init({
     ticket: DataTypes.INTEGER,
     seat: DataTypes.INTEGER,
-    name: DataTypes.STRING,
-    item: DataTypes.INTEGER,
-    server: DataTypes.STRING
+    items: DataTypes.ARRAY(DataTypes.INTEGER),
+    server: DataTypes.STRING,
   }, {
     sequelize,
     modelName: 'Guest',
