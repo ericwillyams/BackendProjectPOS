@@ -1,7 +1,8 @@
-'use strict';
+"use strict";
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
+
   async up (queryInterface, Sequelize) {
     /**
      * Add seed commands here.
@@ -30,4 +31,5 @@ module.exports = {
      */
     return queryInterface.bulkDelete('Servers', null, {});
   }
+
 };
