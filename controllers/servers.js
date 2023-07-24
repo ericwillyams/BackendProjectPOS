@@ -67,6 +67,7 @@ const postLogin = async (req, res) => {
 	
 				
 
+
 			
 		} else  {
 		res.render("login", { title: "Login", error: "Passwords do not match" });
@@ -76,6 +77,7 @@ const postLogin = async (req, res) => {
 	
 	
 }
+
 
 
 //GET SEATMAP
