@@ -145,7 +145,10 @@ const getEntreeByID = async (req, res) => {
 	}
 };
 
-const postEntreeByID = (req, res) => {};
+const postEntreeByID = (req, res) => {
+	
+};
+
 
 module.exports = {
 	createUser,

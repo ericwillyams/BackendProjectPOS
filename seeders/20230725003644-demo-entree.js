@@ -12,10 +12,26 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
-    return queryInterface.bulkInsert('Entree', [{
-      entreeItem: 'queso',
-      price: 7,
-    }]);
+    return queryInterface.bulkInsert('Entree', [
+      {
+        entreeItem: 'Chicken Wrap',
+        price: '12',
+        },
+      {
+        entreeItem: 'Taquitos',
+        price: '8',
+        },
+      {
+        entreeItem: 'Flautas',
+        price: '11',
+        
+        },
+      {
+        entreeItem: 'Burger',
+        price: '14',
+        
+        },
+    ],);
   },
   
 
@@ -30,3 +46,7 @@ module.exports = {
 
   }
 };
+
+
+
+
