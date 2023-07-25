@@ -10,40 +10,58 @@
 			crossorigin="anonymous"
 		/>
 	</head>
+	<title>Seat Selection</title>
+	<style>
+		/* Add custom CSS to make buttons larger and expand over the viewport */
+		.col {
+		  display: flex;
+		  justify-content: center;
+		  align-items: center;
+		  height: 100vh;
+		}
+		.btn-lg {
+		  font-size: 2rem;
+		  padding: 20px 30px;
+		  min-width: 100px;
+		}
+		button {
+		  width: 100%;
+		}
+	  </style>
+	</head>
 	<body>
-		<div class="container text-center">
-			<div class="row row-cols-4">
-				<div class="col">
-					<button><a href="/servers/guest/1">SEAT 1</a></button>
-				</div>
-				<div class="col">
-					<button><a href="/servers/guest/2">SEAT 2</a></button>
-				</div>
-				<div class="col">
-					<button><a href="/servers/guest/3">SEAT 3</a></button>
-				</div>
-				<div class="col">
-					<button><a href="/servers/guest/4">SEAT 4</a></button>
-				</div>
-			</div>
+	  <div class="container-fluid">
+		<div class="row">
+		  <div class="col-3">
+			<button class="btn btn-primary btn-lg"><a href="/servers/guest/1" class="text-white">SEAT 1</a></button>
+		  </div>
+		  <div class="col-3">
+			<button class="btn btn-primary btn-lg"><a href="/servers/guest/2" class="text-white">SEAT 2</a></button>
+		  </div>
+		  <div class="col-3">
+			<button class="btn btn-primary btn-lg"><a href="/servers/guest/3" class="text-white">SEAT 3</a></button>
+		  </div>
+		  <div class="col-3">
+			<button class="btn btn-primary btn-lg"><a href="/servers/guest/4" class="text-white">SEAT 4</a></button>
+		  </div>
 		</div>
-		<div class="container text-center">
-			<div class="row row-cols-4">
-				<div class="col">
-					<button><a href="/servers/guest/5">SEAT 5</a></button>
-				</div>
-				<div class="col">
-					<button><a href="/servers/guest/6">SEAT 6</a></button>
-				</div>
-				<div class="col">
-					<button><a href="/servers/guest/7">SEAT 7</a></button>
-				</div>
-				<div class="col">
-					<button><a href="/servers/guest/8">SEAT 8</a></button>
-				</div>
-			</div>
+		<div class="row mt-5">
+		  <div class="col-3">
+			<button class="btn btn-primary btn-lg"><a href="/servers/guest/5" class="text-white">SEAT 5</a></button>
+		  </div>
+		  <div class="col-3">
+			<button class="btn btn-primary btn-lg"><a href="/servers/guest/6" class="text-white">SEAT 6</a></button>
+		  </div>
+		  <div class="col-3">
+			<button class="btn btn-primary btn-lg"><a href="/servers/guest/7" class="text-white">SEAT 7</a></button>
+		  </div>
+		  <div class="col-3">
+			<button class="btn btn-primary btn-lg"><a href="/servers/guest/8" class="text-white">SEAT 8</a></button>
+		  </div>
 		</div>
+	  </div>
 	</body>
+	</html>
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
