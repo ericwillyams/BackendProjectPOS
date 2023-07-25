@@ -9,158 +9,48 @@
 			integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
 			crossorigin="anonymous"
 		/>
-
-    </head>
+	</head>
 	<body>
 		<div class="container">
 			<div class="row">
 				<div class="col-9">
 					<h1>Welcome to <%= title %></h1>
 				</div>
-				<div class="col-4">
-					<h4>THIS IS WHERE THE MENU WILL BE PLACED</h4>
-					<!-- <div class="row row-cols-2">
-						<div class="dropdown">
-							<button
-								class="btn btn-secondary dropdown-toggle"
-								type="button"
-								data-bs-toggle="dropdown"
-								aria-expanded="false"
-							>
-								BEVERAGES
-							</button>
-							<ul class="dropdown-menu">
-								<li><a class="dropdown-item" href="#">Coke</a></li>
-								<li><a class="dropdown-item" href="#">Pepsi</a></li>
-								<li><a class="dropdown-item" href="#">RootBeer</a></li>
-							</ul>
-						</div> 
-						<div class="dropdown">
-							<button
-								class="btn btn-secondary dropdown-toggle"
-								type="button"
-								data-bs-toggle="dropdown"
-								aria-expanded="false"
-							>
-								BEER
-							</button>
-							<ul class="dropdown-menu">
-								<li><a class="dropdown-item" href="#">DOS XX</a></li>
-								<li><a class="dropdown-item" href="#">Austin EastCiders</a></li>
-								<li><a class="dropdown-item" href="#">Miller</a></li>
-							</ul>
-						</div>
-						<div class="dropdown">
-							<button
-								class="btn btn-secondary dropdown-toggle"
-								type="button"
-								data-bs-toggle="dropdown"
-								aria-expanded="false"
-							>
-								WINE
-							</button>
-							<ul class="dropdown-menu">
-								<li><a class="dropdown-item" href="#">Pino Noir</a></li>
-								<li><a class="dropdown-item" href="#">Pino Grigio</a></li>
-								<li><a class="dropdown-item" href="#">Kendall Jackson</a></li>
-							</ul>
-						</div>
-						<div class="dropdown">
-							<button
-								class="btn btn-secondary dropdown-toggle"
-								type="button"
-								data-bs-toggle="dropdown"
-								aria-expanded="false"
-							>
-								COCKTAIL
-							</button>
-							<ul class="dropdown-menu">
-								<li><a class="dropdown-item" href="#">Old Fash</a></li>
-								<li><a class="dropdown-item" href="#">Martini #007</a></li>
-								<li><a class="dropdown-item" href="#">Margarita Madness</a></li>
-							</ul>
-						</div>
-					</div>
-			
-					<div class="row row-cols-2">
-						<div class="dropdown">
-							<button
-								class="btn btn-secondary dropdown-toggle"
-								type="button"
-								data-bs-toggle="dropdown"
-								aria-expanded="false"
-							>
-								ENTREE
-							</button>
-							<ul class="dropdown-menu">
-								<li><a class="dropdown-item" href="#">Burger</a></li>
-								<li><a class="dropdown-item" href="#">Salad</a></li>
-								<li><a class="dropdown-item" href="#">Sandwich</a></li>
-							</ul>
-						</div>
-						<div class="dropdown">
-							<button
-								class="btn btn-secondary dropdown-toggle"
-								type="button"
-								data-bs-toggle="dropdown"
-								aria-expanded="false"
-							>
-								APP
-							</button>
-							<ul class="dropdown-menu">
-								<li><a class="dropdown-item" href="#">Pizza</a></li>
-								<li><a class="dropdown-item" href="#">Wings</a></li>
-								<li><a class="dropdown-item" href="#">Nachos</a></li>
-							</ul>
-						</div>
-						<div class="dropdown">
-							<button
-								class="btn btn-secondary dropdown-toggle"
-								type="button"
-								data-bs-toggle="dropdown"
-								aria-expanded="false"
-							>
-								DESSERT
-							</button>
-							<ul class="dropdown-menu">
-								<li><a class="dropdown-item" href="#">Brownie</a></li>
-								<li><a class="dropdown-item" href="#">IceCream</a></li>
-								<li><a class="dropdown-item" href="#">Cookies</a></li>
-							</ul>
-						</div> -->
-						<div class="dropdown">
-							<button
-								class="btn btn-secondary dropdown-toggle"
-								type="button"
-								data-bs-toggle="dropdown"
-								aria-expanded="false"
-							>
-								PROMO
-							</button>
-							<ul class="dropdown-menu">
-								<li><a class="dropdown-item" href="#">Ketchup</a></li>
-								<li><a class="dropdown-item" href="#">Mustard</a></li>
-								<li><a class="dropdown-item" href="#">Mayo</a></li>
-							</ul>
-						</div>
-					</div>
-				</div> 
-
 				<div class="col-6 col-sm-8">
 					<h4>THIS IS WHERE THE INFORMATION WILL BE PLACED</h4>
-					<br />  
+					<br />
 					<p>SERVER: <%= server %></p>
 					<p>SEAT: <%= seat %></p>
-					<p>NAME: <%= name%> </p>
-
 				</div>
-                <div class="row row-cols-4">
-                    <div class="col"><button><a href="/users/wine/">WINE</a></button></div>
-                    <div class="col"><button><a href="/users/beer/">BEER</a></button></div>
-                    <div class="col"><button><a href="/users/entree/">ENTREE</a></button></div>
-                    <div class="col"><button><a href="/users/app/">APP</a></button></div>
-                  </div>
-                <!-- <button>checkout</button> -->
+				<div class="row row-cols-4">
+					<div class="col">
+						<button><a href="/servers/app/">APP</a></button>
+					</div>
+					<div class="col">
+						<button><a href="/servers/entree/1">ENTREE</a></button>
+					</div>
+					<div class="col">
+						<button><a href="/servers/beverage/">BEVERAGE</a></button>
+					</div>
+					<div class="col">
+						<button><a href="/servers/beer/">BEER</a></button>
+					</div>
+				</div>
+				<br>
+				<div class="row row-cols-4">
+					<div class="col">
+						<button><a href="/servers/wine/">WINE</a></button>
+					</div>
+					<div class="col">
+						<button><a href="/servers/cocktail/">COCKTAIL</a></button>
+					</div>
+					<div class="col">
+						<button><a href="/servers/dessert/">DESSERT</a></button>
+					</div>
+					<div class="col">
+						<button><a href="/servers/promo/">PROMO</a></button>
+					</div>
+				</div>
 			</div>
 		</div>
 	</body>
@@ -171,4 +61,3 @@
 		crossorigin="anonymous"
 	></script>
 </html>
-
