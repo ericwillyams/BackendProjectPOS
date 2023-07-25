@@ -1,5 +1,6 @@
 const { Server } = require("../models");
 const { Guest } = require("../models");
+const { Entree } = require("../models");
 
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
@@ -30,7 +31,7 @@ const postCreateuser = async (req, res) => {
 	});
 	console.log("New server's ID:", newServer.name);
 
-	res.redirect("/users/login");
+	res.redirect("/servers/login");
 };
 
 //GET LOGIN
@@ -41,15 +42,15 @@ const getLogin = async (req, res) => {
 //POST LOGIN
 const postLogin = async (req, res) => {
 	const { name, password } = req.body;
-	
-	const data =  await Server.findOne({
+
+	const data = await Server.findOne({
 		where: { name },
 	});
 
 	// console.log(name,password,data)
-	console.log("pw", password, data.password)
+	// console.log("pw", password, data.password)
 
-	if ( data == null) {
+	if (data == null) {
 		res.render("login", { title: "Login", error: "User not found" });
 	} else {
 		const hashedPW = data.password;
@@ -59,26 +60,15 @@ const postLogin = async (req, res) => {
 				expiresIn: "1h",
 			});
 			console.log(token);
-	
+
 			// res.cookie("token", token);
-			
-			res.redirect("/users/seatmap");
-	
-	
-				
 
-
-			
-		} else  {
-		res.render("login", { title: "Login", error: "Passwords do not match" });
-			
-	};
-	};
-	
-	
-}
-
-
+			res.redirect("/servers/seatmap");
+		} else {
+			res.render("login", { title: "Login", error: "Passwords do not match" });
+		}
+	}
+};
 
 //GET SEATMAP
 const getSeatmap = async (req, res) => {
@@ -109,16 +99,15 @@ const getServerByID = (req, res) => {
 
 //GET GUEST BY ID
 const getGuestByID = (req, res) => {
-	const { id, ticket, seat, name, item, server } = req.guest;
-	console.log(id, ticket, seat, name, item, server);
+	const { id, ticket, seat, items, server } = req.guest;
+	console.log(id, ticket, seat, items, server);
 
 	res.render("guest", {
 		title: "GUEST PROFILE",
 		id,
 		ticket,
 		seat,
-		name,
-		item,
+		items,
 		server,
 	});
 	if ((req.guest = true)) {
@@ -127,14 +116,36 @@ const getGuestByID = (req, res) => {
 		console.log(err);
 	}
 };
-const postGuestByID = (req, res)=>{
-	// const {id, ticket, seat, name, item, server} = req.guest;
-	
-	Server.onselect = function(){
-		console.log('test')
-	};
 
-}
+//POST GUEST by ID
+const postGuestByID = (req, res) => {
+	// const {id, ticket, seat, name, item, server} = req.guest;
+
+	Server.onselect = function () {
+		console.log("test");
+	};
+};
+
+const getEntreeByID = async (req, res) => {
+	// res.render("entree", { title: "this is the entree" });
+
+	const { id, entreeitem, price } = req.entree;
+	console.log(id, entreeitem, price);
+
+	res.render("entree", {
+		title: "ENTREE ITEMS",
+		id,
+		entreeitem,
+		price,
+	});
+	if ((req.entree = true)) {
+		console.log("code is working");
+	} else {
+		console.log(err);
+	}
+};
+
+const postEntreeByID = (req, res) => {};
 
 module.exports = {
 	createUser,
@@ -146,4 +157,6 @@ module.exports = {
 	getAllUsers,
 	getGuestByID,
 	postGuestByID,
+	getEntreeByID,
+	postEntreeByID,
 };

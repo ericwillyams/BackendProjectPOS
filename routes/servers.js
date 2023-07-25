@@ -2,16 +2,19 @@ var express = require("express");
 var router = express.Router();
 const { Server } = require("../models");
 const { Guest } = require("../models");
+const { Entree } = require("../models");
+
 const userController = require("../controllers/servers");
 const findGuest = require("../middleware/findGuest");
+const findEntree = require('../middleware/findEntree')
 const findServer = require("../middleware/findServer");
 
-const bcrypt = require('bcrypt');
-const authCheck = require('../middleware/authCheck');
+const bcrypt = require("bcrypt");
+const authCheck = require("../middleware/authCheck");
 const saltRounds = 10;
 
 /* GET users listing. */
-router.get('/', userController.getAllUsers);
+router.get("/", userController.getAllUsers);
 
 //GET CREATE USER
 router.get("/create", userController.createUser);
@@ -23,7 +26,7 @@ router.post("/create", userController.postCreateuser);
 router.get("/login", userController.getLogin);
 
 //POST LOGIN
-router.post('/login', userController.postLogin);
+router.post("/login", userController.postLogin);
 
 //GET SEATMAP
 router.get("/seatmap", userController.getSeatmap);
@@ -35,6 +38,14 @@ router.get("/server/:id", findServer, userController.getServerByID);
 router.get("/guest/:id", findGuest, userController.getGuestByID);
 
 //post guest by ID
-router.post('/guest/:id', findGuest, userController.postGuestByID);
+router.post("/guest/:id", findGuest, userController.postGuestByID);
+
+
+//GET
+router.get('/entree/:id', findEntree, userController.getEntreeByID);
+
+//dont fully need
+router.post('/entree/:id', userController.postEntreeByID);
+
 
 module.exports = router;
