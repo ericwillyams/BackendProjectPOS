@@ -8,8 +8,9 @@ const { token } = require("morgan");
 
 //Guest from User***
 const getAllUsers = async (req, res, next) => {
-	const servers = await Server.findAll();
-	res.send("respond with a resource");
+	// const entrees = await Entree.findAll();
+	// res.render("entree", { title: "all entree", entrees });
+	
 };
 
 //GET CREATE USER
@@ -146,8 +147,10 @@ const getEntreeByID = async (req, res) => {
 };
 
 const postEntreeByID = (req, res) => {
-	
+
 };
+
+
 
 
 module.exports = {
