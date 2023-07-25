@@ -8,6 +8,9 @@ const bcrypt = require('bcrypt');
 var indexRouter = require('./routes/index');
 var serversRouter = require('./routes/servers');
 
+
+
+
 //DB Setup
 sequelize
   .sync()

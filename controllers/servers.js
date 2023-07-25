@@ -1,6 +1,10 @@
 const { Server } = require("../models");
+var express = require("express");
+
 const { Guest } = require("../models");
 const { Entree } = require("../models");
+const bodyParser = require("body-parser");
+const app = express();
 
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
@@ -10,12 +14,11 @@ const { token } = require("morgan");
 const getAllUsers = async (req, res, next) => {
 	// const entrees = await Entree.findAll();
 	// res.render("entree", { title: "all entree", entrees });
-	
 };
 
 //GET CREATE USER
 const createUser = async (req, res) => {
-	res.render("create", { title: "create employee" });
+	res.render("create", { title: "Create Employee" });
 };
 
 //POST CREATE USER
@@ -104,7 +107,7 @@ const getGuestByID = (req, res) => {
 	console.log(id, ticket, seat, items, server);
 
 	res.render("guest", {
-		title: "GUEST PROFILE",
+		title: "GUEST",
 		id,
 		ticket,
 		seat,
@@ -146,12 +149,17 @@ const getEntreeByID = async (req, res) => {
 	}
 };
 
-const postEntreeByID = (req, res) => {
+const postEntreeByID = (req, res) => {};
 
+const getCheckout = (req, res) => {
+	res.render("checkout", {
+		title: "Checkout",
+	});
 };
 
-
-
+const getBeverage = (req, res)=>{
+	res.render('beverage', {title: 'Beverages'})
+}
 
 module.exports = {
 	createUser,
@@ -165,4 +173,6 @@ module.exports = {
 	postGuestByID,
 	getEntreeByID,
 	postEntreeByID,
+	getCheckout,
+	getBeverage
 };

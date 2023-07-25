@@ -3,6 +3,8 @@ var router = express.Router();
 const { Server } = require("../models");
 const { Guest } = require("../models");
 const { Entree } = require("../models");
+const bodyParser = require("body-parser");
+const app = express();
 
 const userController = require("../controllers/servers");
 const findGuest = require("../middleware/findGuest");
@@ -46,6 +48,15 @@ router.get('/entree/:id', findEntree, userController.getEntreeByID);
 
 //dont fully need
 router.post('/entree/:id', userController.postEntreeByID);
+
+router.get('/checkout', userController.getCheckout)
+
+router.get('/beverage', userController.getBeverage)
+
+
+
+
+
 
 
 module.exports = router;
