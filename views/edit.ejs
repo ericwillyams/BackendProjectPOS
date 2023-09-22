@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="container mt-5">
+ 
+      <h1><%= title %></h1>
+      <p>Welcome to <%= title %></p>
+      <p>Server: <%= server %></p>
+      <p>Ticket Number: <%= ticket %></p>
+      <p>Seat: <%= seat %></p>    
+  
+      <form action="/servers/guest/<%= id %>" method="post">
+        <input type="hidden" name="_method" value="PATCH">
+        <label for="items">items: </label>
+        <input type="number" id='items' name="items" value="<%= items %>"><br>
+        
+        <label for="server">Server: </label>
+        <input type="text" id='server' name="server" value="<%= server %>"><br>
+        
+        <input type="submit" value="submit">
+
+
+        <a href="/servers/delete/<%= id %>">DELETE</a>
+    </form>
+    </div>
+  </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
+</html>

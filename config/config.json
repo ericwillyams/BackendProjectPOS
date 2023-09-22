@@ -1,0 +1,23 @@
+{
+    "development": {
+      "username": "kiciufyg",
+      "password": "J5graQTob1-oavWPIZfxofhHP7Aejwvj",
+      "database": "kiciufyg",
+      "host": "stampy.db.elephantsql.com",
+      "dialect": "postgres"
+    },
+    "test": {
+      "username": "root",
+      "password": null,
+      "database": "database_test",
+      "host": "127.0.0.1",
+      "dialect": "mysql"
+    },
+    "production": {
+      "username": "root",
+      "password": null,
+      "database": "database_production",
+      "host": "127.0.0.1",
+      "dialect": "mysql"
+    }
+  }

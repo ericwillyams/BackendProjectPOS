@@ -149,16 +149,34 @@ const getEntreeByID = async (req, res) => {
 	}
 };
 
-const postEntreeByID = (req, res) => {};
+const postEntreeByID = (req, res) => {
+	fetch('entree')
+	.then(function(){
+		res.render()
+	})
+};
 
 const getCheckout = (req, res) => {
-	res.render("checkout", {
-		title: "Checkout",
-	});
+	// res.render("checkout", {
+	// 	title: "Checkout",
+	// });
 };
 
 const getBeverage = (req, res)=>{
 	res.render('beverage', {title: 'Beverages'})
+}
+const editGuestByID = async (req, res, next) => {
+	const id = req.params.id;
+	const { ticket, seat, items, server } = await Guest.findByPk(id);
+	console.log(ticket, seat, items, server);
+	res.render("edit", { title: "Edit Guest", id, ticket, seat, items, server });
+};
+
+const postEditGuestByID = async (req, res)=>{
+	const id = req.params.id;
+	const { ticket, seat, items, server } = req.body;
+	await Guest.update({ ticket, seat, items, server }, { where: { id: id } });
+	res.redirect(`/servers/guest/${id}`);
 }
 
 module.exports = {
@@ -174,5 +192,7 @@ module.exports = {
 	getEntreeByID,
 	postEntreeByID,
 	getCheckout,
-	getBeverage
+	getBeverage,
+	editGuestByID,
+	postEditGuestByID,
 };
